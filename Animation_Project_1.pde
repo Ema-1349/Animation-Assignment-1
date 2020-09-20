@@ -2,36 +2,49 @@
 //Block 1-1B
 //September 18th
  
+ 
+// Instead of another set of smaller, closer hills, I made rocks. I hope that's fine! The sun was weird to make, as I wanted to to be able to "rise" and "set". I had to make 2 ellipses that swap with each 
+//other, one that goes down, the other that goes up. I wish that the sun could've paused for a bit when risen/ at its peak, but I didnt know how... Anywho, I love the ombre sky, I wanted the time for 
+//the scene to be at dawn/dusk, hence the setting/rising sun. Also, I added a transparency value for the sun rays.
+//Also, when I tested this animation a few times, I found that some trials the whole screen flashes, while others are completely normal? I dont know, it might just be my pc or WiFi or something, but 
+//I'm sorry if it does flash. By flashing, I mean that the layers are all confused and weird. The sun and the hills show up in front of everything for a milli-second, and the bunny eyes are dragging
+//behind. This didnt happen too much though. I dont know why this happened, but I'm pretty confident my code isnt wrong or anything.
+//Also, I made some clouds move faster/slower than others. I dont know if this worked, but I was hoping for some clouds to seem bigger/closer than others. 
+//Once again, loved the project! I'm probably most proud of the sun(s) even though it isnt really impressive :)
+//I've put all the projects/practise problems on Github too. Under Ema-1349.
+
+ 
 ////     Variables     ////
-int bg1, bg2, bg3;             //Background hill variables
-int bny;                       //Bunny variable
-int r1,r2,r3,r4,r5;            //Rock Variables
-int s,s1;                      //Sun Variable
-int bnys;                      //Bunny Shadow Variable
-int cl1,cl2,cl3,cl4,cl5,cl6;                       //Clouds Variables
+int bg1, bg2, bg3;               //Background hill variables
+int bny;                         //Bunny variable
+int r1,r2,r3,r4,r5;              //Rock Variables
+int s,s1;                        //Sun Variable
+int bnys;                        //Bunny Shadow Variable
+int cl1,cl2,cl3,cl4,cl5,cl6,cl7; //Clouds Variables
 
 ////       Setup       ////
 void setup(){ 
   size(1000,750);
   
-  bg1 = 0;                      // Hill Variables
+  bg1 = 0;                        // Hill Variables
   bg2 = 500; 
   bg3 = 1000; 
-  bny = 100;                    // Bunny Variable
-  r1 = -150;                    //Rock Variable
+  bny = 100;                      // Bunny Variable
+  r1 = -150;                      //Rock Variable
   r2 = 0;
   r3 = 400;
   r4 = 250;
   r5 = 650;
-  s = 500;                      //Sun Variable
+  s = 500;                        //Sun Variable
   s1 = 1300;
-  bnys = 100;                   //Bunny Shadow Variable
-  cl1 = 50;                     //Clouds Variable
+  bnys = 100;                     //Bunny Shadow Variable
+  cl1 = 50;                       //Clouds Variable
   cl2 = 170;
   cl3 = 650;
   cl4 = 850;
   cl5 = 1200;
   cl6 = 900;
+  cl7 = 50;
 }
 
 ////       DRAW       ////
@@ -58,7 +71,7 @@ void draw(){
   fill(255,247,77);
   ellipse(500,s,600,600);
   ellipse(500,s1,600,600);
-  fill(255,247,77,50);
+  fill(255,247,77,25);
   stroke(255,248,106,20);
   ellipse(500,s,900,900);
   ellipse(500,s1,900,900);
@@ -75,18 +88,21 @@ void draw(){
   ellipse(cl4,240,800,50);
   ellipse(cl5,60,400,20);
   ellipse(cl6,40,300,20);
+  ellipse(cl7,30,150,10);
   cl1 = cl1 + 2;                //CLOUDS MOVEMENT
   cl2 = cl2 + 2;
   cl3 = cl3 + 3;
   cl4 = cl4 + 3;
   cl5 = cl5 + 1;
   cl6 = cl6 + 2;
-  if (cl1 > 1400) cl1 = -400;  //CLOUDS REQUIREMENT
+  cl7 = cl7 + 1;
+  if (cl1 > 1400) cl1 = -400;  //CLOUDS RESTRICTION
   if (cl2 > 1400) cl2 = -400;
   if (cl3 > 1400) cl3 = -400;
   if (cl4 > 1400) cl4 = -400;
   if (cl5 > 1400) cl5 = -400;
   if (cl6 > 1400) cl6 = -400;
+  if (cl7 > 1075) cl7 = -75;
    
   fill(0,178,60);               //HILLS
   stroke(0,178,40);
